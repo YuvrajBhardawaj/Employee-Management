@@ -1,0 +1,62 @@
+<form class="flex w-[100%] h-[100%] max-h-screen max-w-screen flex-col justify-between items-center px-6 py-16 gap-5">
+    <h1 class="text-4xl">Enter Employee Details</h1>
+    <div class="w-full flex justify-between gap-2 flex-wrap">
+        <mat-form-field class="example-form-field" style="width: 30%;">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" [(ngModel)]="name" name="name">
+            @if (name) {
+              <button matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            }
+          </mat-form-field>
+          <mat-form-field class="example-form-field" style="width: 30%">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" [(ngModel)]="email" name="email">
+            @if (email) {
+              <button matSuffix mat-icon-button aria-label="Clear" (click)="email=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            }
+          </mat-form-field>
+          <mat-form-field class="example-form-field" style="width: 30%">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="visibility?'password':'text'" [(ngModel)]="password" name="password">
+            @if (password) {
+              <button matSuffix mat-icon-button aria-label="Clear" (click)="visibility=!visibility">
+                <mat-icon>{{visibility?'visibility':'visibility_off'}}</mat-icon>
+              </button>
+            }
+          </mat-form-field>
+    </div>
+    <div class="w-full flex justify-between gap-2 flex-wrap">
+        <mat-form-field class="example-form-field" style="width: 30%;">
+            <mat-label>Active Tasks</mat-label>
+            <input matInput type="number" [(ngModel)]="activeTasks" name="activeTasks">
+            @if (activeTasks) {
+              <button matSuffix mat-icon-button aria-label="Clear" (click)="activeTasks=0">
+                <mat-icon>close</mat-icon>
+              </button>
+            }
+          </mat-form-field>
+          <mat-form-field class="example-form-field" style="width: 30%">
+            <mat-label>Tasks Completed</mat-label>
+            <input matInput type="number" [(ngModel)]="completedTasks" name="completedTasks">
+            @if (completedTasks) {
+              <button matSuffix mat-icon-button aria-label="Clear" (click)="completedTasks=0">
+                <mat-icon>close</mat-icon>
+              </button>
+            }
+          </mat-form-field>
+          <mat-form-field class="example-form-field" style="width: 30%">
+            <mat-label>Failed Tasks</mat-label>
+            <input matInput type="number" [(ngModel)]="tasksFailed" name="tasksFailed">
+            @if (tasksFailed) {
+              <button matSuffix mat-icon-button aria-label="Clear" (click)="tasksFailed=0">
+                <mat-icon>close</mat-icon>
+              </button>
+            }
+          </mat-form-field>
+    </div>
+    <button mat-flat-button>Add Employee</button>
+</form>

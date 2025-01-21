@@ -1,0 +1,49 @@
+<div class="flex w-[100%] h-[100%] max-h-screen max-w-screen flex-col justify-center px-2 py-4 gap-5">
+    <div class="flex justify-between items-center">
+        <h1 class="text-6xl">Employees List</h1>
+    </div>
+    <div class="overflow-y-scroll" *ngIf="employees.success">
+        <table mat-table [dataSource]="employees.data" class="mat-elevation-z8">
+            <!-- Serial Number Column -->
+            <ng-container matColumnDef="serial">
+                <th mat-header-cell *matHeaderCellDef> S.No. </th>
+                <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="Name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+        
+            <!-- Email Column -->
+            <ng-container matColumnDef="Email">
+                <th mat-header-cell *matHeaderCellDef> Email </th>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+        
+            <!-- Active Tasks Column -->
+            <ng-container matColumnDef="Active">
+                <th mat-header-cell *matHeaderCellDef> Active Tasks </th>
+                <td mat-cell *matCellDef="let element"> {{element.activeTasks}} </td>
+            </ng-container>
+        
+            <!-- Completed Tasks Column -->
+            <ng-container matColumnDef="Completed">
+                <th mat-header-cell *matHeaderCellDef> Completed Tasks </th>
+                <td mat-cell *matCellDef="let element"> {{element.completedTasks}} </td>
+            </ng-container>
+        
+            <!-- Failed Tasks Column -->
+            <ng-container matColumnDef="Failed">
+                <th mat-header-cell *matHeaderCellDef> Failed Tasks </th>
+                <td mat-cell *matCellDef="let element"> {{element.tasksFailed}} </td>
+            </ng-container>
+        
+            <!-- Header and Row Definitions -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row (click)="onSelect(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        
+    </div>
+</div>

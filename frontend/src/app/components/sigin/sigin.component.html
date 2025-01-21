@@ -1,0 +1,8 @@
+<div class="flex w-[100%] h-[100%] max-w-screen max-h-screen justify-end items-center bg-[url('/assets/background.avif')] bg-cover bg-center">
+    <form (submit)="onSubmit()" class="mx-14 flex px-4 md:px-8 border rounded-2xl w-[350px] h-[400px] flex-col justify-center items-center gap-4 bg-white opacity-90">
+        <p class="text-2xl">Welcome Back</p>
+        <input type="email" name="email" class="outline-non border bg-transparent px-4 py-2 w-full rounded-full" placeholder="example@gmail.com" required/>
+        <input  type="password" name="password" class="outline-non border bg-transparent px-4 py-2 rounded-full w-full" placeholder="password" required/>
+        <button mat-flat-button>Sign In</button>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+<div class="flex w-[100%] h-[100%] max-h-screen max-w-screen">
+    <div class="w-[250px] shadow-lg shadow-white bg-gray-900 text-white p-4 flex flex-col justify-evenly">
+        <a routerLink="/auth/admin" class="font-medium text-3xl">Admin Portal</a>
+        <div class="flex flex-col mt-6 justify-evenly gap-4">
+            <a routerLink="/auth/admin/addEmployees" class="text-md px-2 py-4 hover:bg-gray-800">Add Employees</a>
+            <a routerLink="/auth/admin/addTask" class="text-md px-2 py-4 hover:bg-gray-800">Add Task</a>
+            <a routerLink="/auth/admin/assignTasks" class="text-md px-2 py-4 hover:bg-gray-800">Assign Task</a>
+            <a routerLink="/auth/admin/employees" class="text-md px-2 py-4 hover:bg-gray-800">Employees List</a>
+            <a routerLink="/auth/admin/tasks" class="text-md px-2 py-4 hover:bg-gray-800">Task List</a>
+        </div>
+        <button mat-flat-button routerLink="">Log Out</button>
+    </div>
+    <div class="w-[250px] shadow-lg shadow-white bg-gray-900 text-white p-4 flex flex-col justify-evenly hidden">
+        <a routerLink="/employee" class="font-medium text-3xl">Employee Portal</a>
+        <div class="flex flex-col mt-6 justify-evenly gap-4">
+            <a routerLink="/employee/profile" class="text-md px-2 py-4 hover:bg-gray-800">Profile</a>
+            <a routerLink="/employee/tasks" class="text-md px-2 py-4 hover:bg-gray-800">My Tasks</a>
+        </div>
+        <button mat-flat-button routerLink="">Log Out</button>
+    </div>
+    <main class="flex-1">
+        <router-outlet></router-outlet>
+    </main>
+</div>
